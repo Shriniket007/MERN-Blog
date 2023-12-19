@@ -23,11 +23,14 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URL, {
+    await mongoose.connect(process.env.MONGO_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+
+    mongoose.set("strictQuery", false);
+
+    console.log("MongoDB Connected");
   } catch (error) {
     console.error("MongoDB Connection Error:", error.message);
     process.exit(1);
