@@ -16,7 +16,9 @@ const PORT = process.env.PORT || 4000;
 const salt = bcrypt.genSaltSync(10);
 const secret = process.env.JWT_SECRET || "defaultSecret"; // Use a default secret if not provided in the environment
 
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(
+  cors({ credentials: true, origin: "https://snk-mern-blog.vercel.app/" })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
