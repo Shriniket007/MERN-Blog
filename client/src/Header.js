@@ -14,6 +14,7 @@ export default function Header() {
     });
   }, []);
 
+  // https://lovely-cyan-bee.cyclic.app
   function logout() {
     fetch("https://lovely-cyan-bee.cyclic.app/logout", {
       credentials: "include",

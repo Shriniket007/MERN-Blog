@@ -16,7 +16,10 @@ const PORT = process.env.PORT || 4000;
 const salt = bcrypt.genSaltSync(10);
 const secret = process.env.JWT_SECRET || "defaultSecret"; // Use a default secret if not provided in the environment
 
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({ origin: "https://snk-mern-blog.vercel.app", credentials: true })
+);
 // { credentials: true, origin: "https://snk-mern-blog.vercel.app/" }
 app.use(express.json());
 app.use(cookieParser());
