@@ -19,12 +19,12 @@ const secret = process.env.JWT_SECRET || "defaultSecret"; // Use a default secre
 // app.use(cors());
 app.use(cors({ origin: "*", credentials: true }));
 // { credentials: true, origin: "https://snk-mern-blog.vercel.app/" }
-const corsOptions = {
-  origin: "https://snk-mern-blog.vercel.app",
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: "https://snk-mern-blog.vercel.app",
+//   credentials: true,
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(cookieParser());
