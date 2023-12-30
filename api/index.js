@@ -13,6 +13,8 @@ const fs = require("fs");
 require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 
+// hello changes
+
 const salt = bcrypt.genSaltSync(10);
 const secret = process.env.JWT_SECRET || "defaultSecret"; // Use a default secret if not provided in the environment
 
